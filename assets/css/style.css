@@ -23,12 +23,15 @@ body {
     /* TYPOGRAPHY*/
     --textFont: poppins, sans-serif;
     --bodyText: 12px;
-    --headerTextSize: 28px bold;
-    --middleHeaderTextSize: 16px bold;
+    --headerTextSize: 28px;
+    --middleHeaderTextSize: 16px;
+    --smallHeaderTextSize: 12px;
+    --fontWeight: bold;
 
     /* SPACING */
+    --gap: 20px;
+    --sectionPadding: 50px;
 
-    /* KNAPPER OG IKONER*/
 
 
     /*  GENERAL STYLING*/
@@ -42,19 +45,31 @@ body {
     h1 {
         font-family: var(--textFont);
         font-size: var(--headerTextSize);
+        font-weight: var(--fontWeight);
     }
 
     h2 {
         font-family: var(--textFont);
         font-size: var(--middleHeaderTextSize);
+        font-weight: var(--fontWeight);
+    }
+
+    h3 {
+        font-family: var(--textFont);
+        font-size: var(--middleHeaderTextSize);
+        font-weight: var(--fontWeight);
     }
 
 
-
+    /* KNAPPER OG IKONER*/
     /* buttons */
-    .button {
+    button {
         background-color: var(--secondaryColor);
         color: var(--textColor);
+        width: 100px;
+        height: 20px;
+        border-radius: 5px;
+        border: none;
     }
 
     .allergeneIkon {
@@ -84,19 +99,74 @@ body {
 
     }
 
+    /* STYLES */
+
+    .heroBillede {
+        background-color: var(--lightPrimaryColor);
+        height: 200px;
+        position: relative;
+    }
+
+    .overlaySection {
+        background-color: var(--backgroundColor);
+        border-radius: 50px 50px 0 0;
+        position: absolute;
+        top: 200px;
+        left: 0;
+        padding: 20px;
+        padding-bottom: 200px;
+
+    }
+
+
+
+
+
+
     /* GLOBAL NAVIGATION */
     footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+    }
+
+
+    .openingHours {
+        background-color: var(--white);
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 50px 50px 0 0;
+
+
+    }
+
+    nav {
         height: 110px;
         background-color: var(--primaryColor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            padding: 0;
+
+            li {
+                list-style: none;
+
+
+                a {
+                    text-decoration: none;
+                    color: var(--white);
+                }
+            }
+        }
     }
-}
-
-.heroBillede {
-    background-color: var(--lightPrimaryColor);
-    height: 400px;
-}
-
-.overlaySection {
-    background-color: var(--backgroundColor);
-    border-radius: 50px 50px 0 0;
 }
