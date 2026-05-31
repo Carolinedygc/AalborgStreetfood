@@ -1,9 +1,102 @@
-/*  General styling*/
 body {
     margin: 0;
+
+
+    /* VARIABLER*/
+    /* FARVER */
+    --primaryColor: #01BFD3;
+    --lightPrimaryColor: #8FEAF4;
+    --secondaryColor: #FFBFD3;
+    --white: #FFFFFF;
+    --backgroundColor: #F0F7F8;
+    --textColor: #000000;
+
+
+    /* ikon farver */
+    --lightPink: #F3C0C0;
+    --lightYellow: #E9E79A;
+    --lightBrown: #CCA06E;
+    --lightGreen: #A7D9A6;
+    --lightBlue: #A6DEE4;
+
+
+    /* TYPOGRAPHY*/
+    --textFont: poppins, sans-serif;
+    --bodyText: 12px;
+    --headerTextSize: 28px bold;
+    --middleHeaderTextSize: 16px bold;
+
+    /* SPACING */
+
+    /* KNAPPER OG IKONER*/
+
+
+    /*  GENERAL STYLING*/
+
+
+    p {
+        font-family: var(--textFont);
+        font-size: var(--bodyText);
+    }
+
+    h1 {
+        font-family: var(--textFont);
+        font-size: var(--headerTextSize);
+    }
+
+    h2 {
+        font-family: var(--textFont);
+        font-size: var(--middleHeaderTextSize);
+    }
+
+
+
+    /* buttons */
+    .button {
+        background-color: var(--secondaryColor);
+        color: var(--textColor);
+    }
+
+    .allergeneIkon {
+        color: var(--textColor)
+    }
+
+    .socialsIkon {
+        color: var(--white);
+    }
+
+
+    /* HEADER */
+    header {
+        height: 90px;
+        background-color: var(--primaryColor);
+
+        ul {
+            li {
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+
+                }
+            }
+        }
+
+    }
+
+    /* GLOBAL NAVIGATION */
+    footer {
+        height: 110px;
+        background-color: var(--primaryColor);
+    }
 }
 
-/* Typography */
+.heroBillede {
+    background-color: var(--lightPrimaryColor);
+    height: 400px;
+}
 
-
-/* Utillaty classes */
+.overlaySection {
+    background-color: var(--backgroundColor);
+    border-radius: 50px 50px 0 0;
+}
