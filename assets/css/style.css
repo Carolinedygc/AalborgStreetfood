@@ -2,6 +2,7 @@ body {
     margin: 0;
 
 
+
     /* VARIABLER*/
     /* FARVER */
     --primaryColor: #01BFD3;
@@ -30,6 +31,7 @@ body {
 
     /* SPACING */
     --gap: 20px;
+    --smallGap: 10px;
     --sectionPadding: 50px;
 
 
@@ -56,7 +58,7 @@ body {
 
     h3 {
         font-family: var(--textFont);
-        font-size: var(--middleHeaderTextSize);
+        font-size: var(--smallHeaderTextSize);
         font-weight: var(--fontWeight);
     }
 
@@ -67,18 +69,16 @@ body {
         background-color: var(--secondaryColor);
         color: var(--textColor);
         width: 100px;
-        height: 20px;
+        height: 30px;
         border-radius: 5px;
         border: none;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
     }
 
     .allergeneIkon {
         color: var(--textColor)
     }
 
-    .socialsIkon {
-        color: var(--white);
-    }
 
 
     /* HEADER */
@@ -86,7 +86,20 @@ body {
         height: 90px;
         background-color: var(--primaryColor);
 
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+
+        }
+
         ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--gap);
+
             li {
                 list-style: none;
 
@@ -96,6 +109,16 @@ body {
                 }
             }
         }
+
+        i {
+            color: var(--white);
+            font-size: 30px;
+        }
+
+        img {
+            height: 60px;
+        }
+
 
     }
 
@@ -130,43 +153,65 @@ body {
         left: 0;
         right: 0;
 
-    }
-
-
-    .openingHours {
-        background-color: var(--white);
-        height: 45px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        border-radius: 50px 50px 0 0;
-
-
-    }
-
-    nav {
-        height: 110px;
-        background-color: var(--primaryColor);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        ul {
+        nav {
+            height: 100%;
+            background-color: var(--primaryColor);
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 40px;
-            padding: 0;
+            justify-content: center;
 
-            li {
-                list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--gap);
 
+            color: var(--textColor);
+            font-size: var(--middleHeaderTextSize);
+            font-weight: var(--fontWeight);
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 70px;
+            }
+
+
+            a {
+                text-decoration: none;
+                color: var(--textColor);
+                font-size: 30px;
+            }
+
+            .active {
+                text-decoration: underline;
+                text-underline-offset: 5px;
+                text-decoration-thickness: 2px;
+                text-decoration-color: var(--secondaryColor);
 
                 a {
-                    text-decoration: none;
-                    color: var(--white);
+                    color: var(--secondaryColor);
                 }
             }
+
+
         }
     }
+
+}
+
+
+.openingHours {
+    background-color: var(--white);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50px 50px 0 0;
+
+
+}
+
+main {
+    min-height: 100vh;
 }

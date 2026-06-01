@@ -14,6 +14,9 @@
 }
 
 .CTA {
+    text-decoration: none;
+    color: var(--textColor);
+
 
     img {
         background-color: var(--primaryColor);
@@ -24,6 +27,7 @@
 
     p {
         text-align: center;
+        font-weight: var(--fontWeight);
     }
 
 }
@@ -47,6 +51,7 @@
     overflow-y: hidden;
     width: 100%;
 
+
 }
 
 .nyhedsCards::-webkit-scrollbar {
@@ -65,11 +70,15 @@
 
 .nyhedsCard {
     width: 270px;
-    height: 260px;
+    height: 270px;
     /* box-shadow: ; */
     background-color: var(--white);
     min-width: 270px;
     flex-shrink: 0;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--gap);
+    text-decoration: none;
+    color: var(--textColor);
 
     .nyhedsCardText {
         padding: var(--gap);

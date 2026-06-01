@@ -8,16 +8,19 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/forside.css">
     <script src="./assets/js/app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
 <body>
     <header>
         <nav>
+            <a href="./index.html"><img src="./assets/img/logo.svg" alt="Aalborg Streetfood Logo"></a>
             <ul>
-                <li><a href="./index.html"><img src="./assets/img/" alt="Aalborg Streetfood Logo"></a></li>
-                <li></li>
-                <li></li>
+                <li><a href="https://www.facebook.com/aalborgstreetfoodmarkedmarket" target="_blank"
+                        rel="noopener noreferrer"><i class="fa-brands fa-square-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/AalborgStreetfood" target="_blank" rel="noopener noreferrer"><i
+                            class="fa-brands fa-instagram"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -25,34 +28,34 @@
     <main>
         <section class="heroBillede">
             <img src="" alt="">
-
         </section>
         <section class=" overlaySection">
             <article class="introSection">
-                <h1>Velkommen til Aalborg Streetfood</h1>
+                <h1>VELKOMMEN TIL AALBORG STREETFOOD</h1>
                 <p>Mere end streetfood - Aalborg Streetfood er stedet, hvor smage, mennesker og oplevelser mødes. Nyd
                     mad fra hele verden samt underholdende aktiviteter og events.</p>
             </article>
 
             <article class="CTASection">
 
-                <div class="CTA">
+                <a href="./boder.html" class="CTA">
                     <img src="" alt="">
-                    <p>tekst</p>
-                </div>
-                <div class="CTA">
+                    <p>Boder</p>
+                </a>
+                <a href="./aktiviteter.html" class="CTA">
                     <img src="" alt="">
-                    <p>tekst</p>
-                </div>
-                <div class="CTA">
+                    <p>Aktiviteter</p>
+                </a>
+                <a href="./events.html" class="CTA">
                     <img src="" alt="">
-                    <p>tekst</p>
-                </div>
+                    <p>Events</p>
+                </a>
             </article>
             <article class="nyheder">
                 <h2>Nyheder</h2>
                 <div class="nyhedsCards">
-                    <div class="nyhedsCard">
+                    <a href="./specifikEvent.html" class="nyhedsCard">
+
                         <img src="" alt="">
                         <div class="nyhedsCardText">
                             <h3>Børnenes dag hver søndag</h3>
@@ -60,25 +63,25 @@
                             </p>
                             <button>Læs mere</button>
                         </div>
-                    </div>
-                    <div class="nyhedsCard">
+                    </a>
+                    <a href="./specifikBod.html" class="nyhedsCard">
                         <img src="" alt="">
                         <div class="nyhedsCardText">
-                            <h3>Børnenes dag hver søndag</h3>
-                            <p>Hver søndag forvandles Aalborg Streetfood til et sandt kreativt paradis for de yngste.
+                            <h3>Ny madbod: LOCO - Mexican Streetfood</h3>
+                            <p>Autentisk smag fra Mexico – oplev burritos, nachos og klassiske mexicanske favoritter.
                             </p>
                             <button>Læs mere</button>
                         </div>
-                    </div>
-                    <div class="nyhedsCard">
+                    </a>
+                    <a href="./specifikAktivitet.html" class="nyhedsCard">
                         <img src="" alt="">
                         <div class="nyhedsCardText">
-                            <h3>Børnenes dag hver søndag</h3>
-                            <p>Hver søndag forvandles Aalborg Streetfood til et sandt kreativt paradis for de yngste.
+                            <h3>13. juni kl. 10-13: Yoga på græsplænen</h3>
+                            <p>Start dagen med ro og yoga i hyggelige omgivelser ved Limfjorden.
                             </p>
                             <button>Læs mere</button>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </article>
             <article class="questions">
@@ -99,14 +102,28 @@
             <p>Åbningstid idag: xx:xx - xx:xx</p>
             <p>Se vores åbningstider</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="./boder.html">Link</a></li>
-                <li><a href="./events.html">Link</a></li>
-                <li><a href="./aktiviteter.html">Link</a></li>
-                <li><a href="./kort.html">Link</a></li>
-                <li><a href="./faq.html">Link</a></li>
-            </ul>
+        <nav class="globalNav">
+
+            <div>
+                <a href="./boder.html"><i class="fa-solid fa-utensils"></i></a>
+                <p>Boder</p>
+            </div>
+            <div> <a href="./events.html"><i class="fa-solid fa-calendar-days"></i></a>
+                <p>Events</p>
+            </div>
+            <div>
+                <a href="./aktiviteter.html"><i class="fa-solid fa-dice"></i></a>
+                <p>Aktiviteter</p>
+            </div>
+            <div>
+                <a href="./kort.html"><i class="fa-solid fa-map-marker-alt"></i></a>
+                <p>Kort</p>
+            </div>
+            <div>
+                <a href="./faq.html"><i class="fa-solid fa-question-circle"></i></a>
+                <p>FAQ</p>
+            </div>
+
         </nav>
 
     </footer>
