@@ -34,28 +34,45 @@ function renderBod(post) {
     // laver en variabel for at gøre det nemmere at arbejde med menukortet i WP,da samlingen indeholder både overskrift og beskrivelse for menukortet, samt alle retterne.
     const samling = post.acf.menukort.menu_samling_1;
 
+
+    // laver objekt med allergener og deres ikoner
+    const allergenIkoner = {
+        "Vegetarisk": "./assets/img/Vegetar.svg",
+        "Indeholder laktose": "./assets/img/Laktose.svg",
+        "Indeholder gluten": "./assets/img/Gluten.svg",
+        "Indeholder nødder": "./assets/img/Noedder.svg",
+        "Indeholder skalddyr": "./assets/img/Skalddyr.svg"
+    }
+
+
+
     // Find alle retter dynamisk (ret_1, ret_2, ret_3 osv.) og filtrerer dem for at finde de keys der starter med "ret_" 
     const retter = Object.keys(samling)
         .filter(key => key.startsWith("ret_"))
-        .map(key => samling[key]);
+        .map(key => samling[key])
+        .filter(ret => ret.ret_overskrift !== ""); // fjerner tomme retter
 
-    // Generer HTML for hver ret, dette gøres for at kunne vise et ubegrænset antal retter på menukortet, da det afhænger af hvor mange retter der er oprettet i WP for den enkelte bod.
-    const retterHTML = retter.map(ret => `
-        <div class="menuItem">
+
+    const retterHTML = retter.map(ret => {
+        const allergenerHTML = Array.isArray(ret.ret_allergener)
+            ? ret.ret_allergener.map(allergen => `
+                <img src="${allergenIkoner[allergen]}" alt="${allergen}" class="allergen" title="${allergen}">
+              `).join("")
+            : "";
+
+        return `        <div class="menuItem">
             <div class="menuItemHeader">
                 <div class="menuItemHeader">
                     <h2>${ret.ret_overskrift}</h2>
                     <div class="allergeneIkon">
-                        <img src="" alt="" class="allergen">
-                        <img src="" alt="" class="allergen">
-                        <img src="" alt="" class="allergen">
+                       ${allergenerHTML}
                     </div>
                 </div>
                 <h2>${ret.ret_pris} kr</h2>
             </div>
             <p>${ret.ret_beskrivelse}</p>
-        </div>
-    `).join("");
+        </div>`;
+    }).join("");
 
 
 
@@ -68,23 +85,23 @@ function renderBod(post) {
                     </div>
                     <div class="allergener">
                         <div class="allergen">
-                            <img src="" alt="">
+                            <img src="./assets/img/Vegetar.svg" alt="Vegetar ikon">
                             <p>Vegetarisk</p>
                         </div>
                         <div class="allergen">
-                            <img src="" alt="">
+                            <img src="./assets/img/Laktose.svg" alt="Indeholder laktose ikon">
                             <p>Indeholder laktose</p>
                         </div>
                         <div class="allergen">
-                            <img src="" alt="">
+                            <img src="./assets/img/Gluten.svg" alt="Indeholder gluten ikon">
                             <p>Indeholder gluten</p>
                         </div>
                         <div class="allergen">
-                            <img src="" alt="">
+                            <img src="./assets/img/Noedder.svg" alt="Indeholder nødder ikon">
                             <p>Indeholder nødder</p>
                         </div>
                         <div class="allergen">
-                            <img src="" alt="">
+                            <img src="./assets/img/Skalddyr.svg" alt="Indeholder skalddyr ikon">
                             <p>Indeholder skalddyr</p>
                         </div>
                     </div>
@@ -105,6 +122,7 @@ function renderBod(post) {
                 </div>
 
                 ${retterHTML}
+
             </div>
         </article>
     `;
@@ -115,3 +133,4 @@ function renderBod(post) {
     heroBillede.innerHTML = ``;
     heroBillede.innerHTML = `<img src="${post.acf.herocard_billede}" alt="Billede af mad fra ${post.acf.titel}">`;
 }
+

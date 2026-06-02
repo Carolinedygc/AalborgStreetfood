@@ -85,6 +85,11 @@ body {
     header {
         height: 90px;
         background-color: var(--primaryColor);
+        z-index: 2;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
 
         nav {
             display: flex;
@@ -125,9 +130,14 @@ body {
     /* STYLES */
 
     .heroBillede {
+        top: 90px;
+        left: 0;
+        right: 0;
+        position: fixed;
+
 
         img {
-            height: 200px;
+            height: 250px;
             width: 100%;
             position: relative;
             object-fit: cover;
@@ -138,10 +148,14 @@ body {
         background-color: var(--backgroundColor);
         border-radius: 50px 50px 0 0;
         position: absolute;
-        top: 200px;
+        top: 250px;
         left: 0;
         padding: 20px;
         padding-bottom: 200px;
+
+        .beskrivelsesTekst {
+            padding: var(--gap) 0;
+        }
 
     }
 
@@ -156,6 +170,7 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
+        z-index: 2;
 
         nav {
             height: 100%;
@@ -218,4 +233,36 @@ body {
 
 main {
     min-height: 100vh;
+}
+
+
+
+/* scrollpil */
+.scroll {
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: rgba(1, 191, 211, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    animation: pilAnimation 1s ease-in-out infinite;
+}
+
+@keyframes pilAnimation {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(6px);
+    }
 }
