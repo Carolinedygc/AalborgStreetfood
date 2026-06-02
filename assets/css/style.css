@@ -125,9 +125,13 @@ body {
     /* STYLES */
 
     .heroBillede {
-        background-color: var(--lightPrimaryColor);
-        height: 200px;
-        position: relative;
+
+        img {
+            height: 200px;
+            width: 100%;
+            position: relative;
+            object-fit: cover;
+        }
     }
 
     .overlaySection {
