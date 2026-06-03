@@ -1,6 +1,6 @@
 .bodCards {
     gap: var(--smallGap);
-    padding-top: var(--sectionPadding);
+    padding-bottom: var(--sectionPadding);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
