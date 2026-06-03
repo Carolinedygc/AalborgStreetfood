@@ -35,7 +35,7 @@ function renderBoder(posts) {
     posts.forEach(post => {
         // laver sticker som en variabel
         const sticker = post.acf.land
-            ? `<div class="sticker"><p>${post.acf.land}</p></div>` : ";"
+            ? `<div class="sticker"><p>${post.acf.land}</p></div>` : ""
 
 
         boderContainer.innerHTML += `

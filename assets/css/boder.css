@@ -13,12 +13,17 @@
     text-decoration: none;
     color: var(--textColor);
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     .bodCardText {
         padding: 10px;
         display: flex;
         flex-direction: column;
+        flex: 1;
+        /* fylder al tilgængelig plads */
+        justify-content: space-between;
+        /* skubber button til bunden */
     }
 
     button {
