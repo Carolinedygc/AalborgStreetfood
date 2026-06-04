@@ -96,6 +96,36 @@
     }
 }
 
+/* scrollpil */
+.scroll {
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    background-color: rgba(1, 191, 211, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+
+    animation: pilAnimation 1s ease-in-out infinite;
+}
+
+@keyframes pilAnimation {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-50%) translateX(6px);
+    }
+}
+
 /* SPØRGSMÅL */
 .questions {
     padding-top: var(--sectionPadding);

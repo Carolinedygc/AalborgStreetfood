@@ -1,3 +1,7 @@
+.introSection {
+    padding-bottom: var(--gap);
+}
+
 .bodCards {
     gap: var(--smallGap);
     padding-bottom: var(--sectionPadding);
@@ -47,7 +51,7 @@
     .sticker {
         background-color: var(--primaryColor);
         color: var(--textColor);
-        padding: var(--smallGap) var(--gap);
+        padding: var(--smallGap);
         width: fit-content;
         height: auto;
         text-align: center;
