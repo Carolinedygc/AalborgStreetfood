@@ -33,8 +33,7 @@ body {
     --gap: 20px;
     --smallGap: 10px;
     --sectionPadding: 50px;
-
-
+    --padding: 30px;
 
     /*  GENERAL STYLING*/
 
@@ -222,14 +221,262 @@ body {
 
 .openingHours {
     background-color: var(--white);
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    height: auto;
     border-radius: 50px 50px 0 0;
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1);
+    padding: var(--smallGap) var(--gap);
+    transition: all 0.3s ease;
 
+    .whenClosed {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: var(--textFont);
+        font-size: var(--smallHeaderTextSize);
+
+        .clickHere {
+            text-decoration: underline;
+        }
+    }
+
+    .fullOpeninghours,
+    .fullOpeninghoursFood {
+        display: none;
+
+        .toggle {
+            display: flex;
+            justify-content: center;
+            padding-top: var(--padding);
+
+        }
+
+
+
+        .forskelligeTidsintervaller {
+            display: flex;
+            justify-content: space-between;
+            padding-top: var(--padding);
+
+
+            .tidsinterval.gone {
+                opacity: 0;
+            }
+
+            .tidsinterval {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                div {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+
+                }
+
+                .pink {
+                    background-color: var(--lightPink);
+                }
+
+                .gul {
+                    background-color: var(--lightYellow);
+                }
+
+                .brun {
+                    background-color: var(--lightBrown);
+                }
+
+                .grøn {
+                    background-color: var(--lightGreen);
+                }
+
+            }
+        }
+
+        .kalender {
+
+            .kalenderTop {
+                display: flex;
+                justify-content: space-between;
+                padding-top: var(--padding);
+            }
+
+            .kalenderen {
+                .ugedage {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px;
+                }
+
+                hr {
+                    height: 1px;
+                    background-color: var(--textColor);
+                    width: 100%;
+                }
+
+                .kalenderDage {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--smallGap);
+                    padding-top: var(--smallGap);
+
+                    .uge1,
+                    .uge2,
+                    .uge3,
+                    .uge4 {
+                        display: flex;
+                        justify-content: space-between;
+
+
+                        .kalenderDag {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            p {
+                                margin: 0;
+                            }
+
+                        }
+
+                        .pink {
+                            background-color: var(--lightPink);
+                        }
+
+                        .gul {
+                            background-color: var(--lightYellow);
+                        }
+
+                        .brun {
+                            background-color: var(--lightBrown);
+                        }
+
+                        .grøn {
+                            background-color: var(--lightGreen);
+                        }
+
+                        .pinkLight {
+                            background-color: var(--lightPink);
+                            opacity: 0.5;
+                        }
+
+                        .gulLight {
+                            background-color: var(--lightYellow);
+                            opacity: 0.5;
+                        }
+
+                        .brunLight {
+                            background-color: var(--lightBrown);
+                            opacity: 0.5;
+                        }
+
+                        .grønLight {
+                            background-color: var(--lightGreen);
+                            opacity: 0.5;
+                        }
+
+                        .idag {
+                            background-color: #976B3A;
+                            color: var(--lightYellow);
+                            border: solid;
+                            border-color: var(--textColor);
+                            border-width: 2px;
+                            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .fullOpeninghours.active {
+        display: block;
+    }
+
+    .fullOpeninghours.active {
+        display: block;
+    }
+
+    .openingHours.expanded {
+        height: 550px;
+    }
+}
+
+.fullOpeninghours .street {
+
+    width: 160px;
+    background-color: var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--smallGap);
+    font-family: var(--textFont);
+    font-size: var(--smallHeaderTextSize);
+    font-weight: var(--fontWeight);
+}
+
+
+.fullOpeninghours .food {
+    width: 160px;
+    border: solid;
+    border-color: var(--primaryColor);
+    border-width: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    font-family: var(--textFont);
+    font-size: var(--smallHeaderTextSize);
+    font-weight: var(--fontWeight);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
 
 }
+
+.fullOpeninghoursFood .street {
+    width: 160px;
+    border: solid;
+    border-color: var(--primaryColor);
+    border-width: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    font-family: var(--textFont);
+    font-size: var(--smallHeaderTextSize);
+    font-weight: var(--fontWeight);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.fullOpeninghoursFood .food {
+    width: 160px;
+    background-color: var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--smallGap);
+    font-family: var(--textFont);
+    font-size: var(--smallHeaderTextSize);
+    font-weight: var(--fontWeight);
+
+}
+
+
+.fullOpeninghoursFood.active {
+    display: block;
+}
+
+
+
+
+
 
 main {
     min-height: 100vh;
