@@ -1,0 +1,88 @@
+.eventCalendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: var(--gap);
+}
+
+.eventFilter {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: var(--gap);
+}
+
+.dates {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    gap: var(--gap);
+}
+
+.events {
+    padding-top: var(--sectionPadding);
+    max-width: 400px;
+    overflow: hidden;
+
+}
+
+h3,
+p {
+    margin: 0 0 10px 0;
+}
+
+.eventsCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--gap);
+}
+
+
+.eventCard {
+    width: 400px;
+    height: 280px;
+    background-color: var(--white);
+    min-width: 270px;
+    flex-shrink: 0;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: var(--gap);
+    text-decoration: none;
+    color: var(--textColor);
+    padding-right: 10px;
+}
+
+.eventCardText {
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.eventCardText h2,
+.eventCardText p {
+    margin: 0 0 4px 0;
+}
+
+/* webkit gør at vi kan angive hvor mange linjer af intro teksten der vises på cards*/
+/* Kilde: https://css-tricks.com/almanac/properties/l/line-clamp/ */
+.eventCardText p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* antal linjer før afskæring */
+    -webkit-box-orient: vertical;
+    /* gør at line-clamp virker og bestemmer retningen for en box*/
+    overflow: hidden;
+}
+
+button {
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
