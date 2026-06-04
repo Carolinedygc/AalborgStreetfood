@@ -1,0 +1,31 @@
+.sted {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: var(--gap);
+}
+
+.tid {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    gap: var(--gap);
+}
+
+.eventContainer,
+h1 {
+    margin-bottom: 0;
+}
+
+.billetter,
+h2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+
+    align-items: flex-end;
+    margin-right: 10px;
+
+}
