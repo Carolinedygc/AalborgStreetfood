@@ -42,7 +42,7 @@ p {
 
 .eventCard {
     width: 400px;
-    height: 280px;
+    height: 290px;
     background-color: var(--white);
     min-width: 270px;
     flex-shrink: 0;
