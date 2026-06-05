@@ -1,9 +1,20 @@
+a {
+    text-decoration: none;
+}
+
+button {
+    display: block;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+
 /* ACCORDIANS */
 .FAQ {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
-    ;
+    padding-top: var(--sectionPadding);
 }
 
 .accordionItem {
