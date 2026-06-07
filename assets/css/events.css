@@ -3,86 +3,110 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex-wrap: nowrap;
-    gap: var(--gap);
-}
 
-.eventFilter {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    gap: var(--gap);
-}
+    .dates {
+        display: flex;
+        align-items: center;
+        gap: var(--gap);
 
-.dates {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    gap: var(--gap);
+        h2 {
+            text-decoration: underline;
+        }
+    }
+
+    .filterKnap {
+        display: flex;
+        gap: var(--gap);
+        align-items: center;
+
+        p,
+        i {
+            font-size: var(--middleHeaderTextSize);
+
+        }
+    }
+
+    .eventFilter {
+        position: relative;
+        /* gør at dropdown kan positioneres relativt til filter knappen */
+    }
+
+    .filterDropdown {
+        position: absolute;
+        /* placerer dropdown under filter knappen */
+        right: 0;
+        background-color: var(--white);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+        padding: var(--gap);
+        z-index: 10;
+        /* ligger ovenpå andet indhold */
+        min-width: 190px;
+    }
+
+    .filterListe {
+        display: flex;
+        flex-direction: column;
+        gap: var(--smallGap);
+    }
+
+
+    /* roterer pil når dropdown er åben */
+    .filterKnap i.roteret {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+
 }
 
 .events {
     padding-top: var(--sectionPadding);
-    max-width: 400px;
-    overflow: hidden;
 
-}
+    .eventsCards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--gap);
+    }
 
-h3,
-p {
-    margin: 0 0 10px 0;
-}
+    .eventCard {
+        background-color: var(--white);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: var(--textColor);
+        display: flex;
+        flex-direction: column;
+    }
 
-.eventsCards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--gap);
-}
+    .eventCardText {
+        padding: var(--gap);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
 
+        h2,
+        p {
+            margin: 0 0 4px 0;
+        }
+    }
 
-.eventCard {
-    width: 400px;
-    height: 280px;
-    background-color: var(--white);
-    min-width: 270px;
-    flex-shrink: 0;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: var(--gap);
-    text-decoration: none;
-    color: var(--textColor);
-    padding-right: 10px;
-}
+    /* webkit gør at vi kan angive hvor mange linjer af intro teksten der vises på cards*/
+    /* Kilde: https://css-tricks.com/almanac/properties/l/line-clamp/ */
+    .eventCardText p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* antal linjer før afskæring */
+        -webkit-box-orient: vertical;
+        /* gør at line-clamp virker og bestemmer retningen for en box*/
+        overflow: hidden;
+    }
 
-.eventCardText {
-    padding: var(--gap);
-    display: flex;
-    flex-direction: column;
+    button {
+        align-self: flex-end;
+        margin-top: auto;
+    }
 
-}
-
-.eventCardText h2,
-.eventCardText p {
-    margin: 0 0 4px 0;
-}
-
-/* webkit gør at vi kan angive hvor mange linjer af intro teksten der vises på cards*/
-/* Kilde: https://css-tricks.com/almanac/properties/l/line-clamp/ */
-.eventCardText p {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* antal linjer før afskæring */
-    -webkit-box-orient: vertical;
-    /* gør at line-clamp virker og bestemmer retningen for en box*/
-    overflow: hidden;
-}
-
-button {
-    align-self: flex-end;
-    margin-right: 10px;
-}
-
-img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
+    img {
+        width: 100%;
+        height: 140px;
+        object-fit: cover;
+    }
 }
