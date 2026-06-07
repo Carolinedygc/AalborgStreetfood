@@ -42,7 +42,7 @@ function renderEvent(post) {
                
                 <div class="billetRække">
                     <h3>Billetter</h3>
-                    <h3 class="billetPris">${post.acf.billetter.billet_pris ? `${post.acf.billetter.billet_pris} kr` : "Gratis"}</h3>
+                    <h3 class="billetPris">${post.acf.billetter.billet_pris ? `${post.acf.billetter.billet_pris} kr` : ""}</h3>
                 </div>
                 ${post.acf.booking_link ? `<button onclick="window.open('${post.acf.booking_link}', '_blank')">${post.acf.billetter.billet_overskrift}</button>` : ""}
             
@@ -75,12 +75,12 @@ function renderEvent(post) {
                 <p><i class="fa-solid fa-location-dot"></i> ${post.acf.lokation}</p>
             </div>
             <p>${post.acf.intro_tekst}</p>
-            <button>Læs mere</button>
+            <a href="#beskrivelse"><button>Læs mere</button></a>
         </article>
 <hr>
         ${billetSektion}
 <hr>
-        <div class="eventBeskrivelse">
+        <div class="eventBeskrivelse" id="beskrivelse">
             ${beskrivelse}
         </div>
 

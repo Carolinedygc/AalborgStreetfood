@@ -82,6 +82,11 @@ body {
         color: var(--textColor)
     }
 
+    .tilbageKnap {
+        color: var(--textColor);
+        font-size: var(--smallHeaderTextSize);
+
+    }
 
 
     /* HEADER */
@@ -161,6 +166,14 @@ body {
             padding: var(--gap) 0;
         }
 
+    }
+
+    hr {
+        width: 100%;
+        height: 3px;
+        border: none;
+        background-color: var(--primaryColor);
+        margin-block: var(--gap);
     }
 
 
