@@ -44,7 +44,7 @@ function renderAktivitet(post) {
                 : "";
 
             const pris = pakke.pakke_pris // viser pris kun hvis der er en pris i pakken, ellers vises Gratis
-                ? `<p class="pakkePris">fra ${pakke.pakke_pris} kr</p>`
+                ? `<h3 class="pakkePris"> ${pakke.pakke_pris} kr</h3>`
                 : "Gratis";
 
             return `<div class="pakke">

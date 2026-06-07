@@ -41,27 +41,26 @@ body {
 
     /*  GENERAL STYLING*/
 
+    * {
+        font-family: var(--textFont);
+    }
 
     p {
-        font-family: var(--textFont);
         font-size: var(--bodyText);
         line-height: 150%;
     }
 
     h1 {
-        font-family: var(--textFont);
         font-size: var(--headerTextSize);
         font-weight: var(--fontWeight);
     }
 
     h2 {
-        font-family: var(--textFont);
         font-size: var(--middleHeaderTextSize);
         font-weight: var(--fontWeight);
     }
 
     h3 {
-        font-family: var(--textFont);
         font-size: var(--smallHeaderTextSize);
         font-weight: var(--fontWeight);
     }

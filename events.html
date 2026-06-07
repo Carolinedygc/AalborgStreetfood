@@ -33,37 +33,37 @@
         <section class=" overlaySection">
             <article class="introSection">
                 <h1>EVENTS</h1>
-                <p>Få overblik over de kommende events hos Aalborg Streetfood – fra quiz og live musik til smagninger og
+                <p>Få overblik over de kommende events hos Aalborg Streetfood – fra quiz og live musik til smagninger
+                    og
                     særlige temaaftener. </p>
 
                 <div class="eventCalendar">
                     <div class="dates">
                         <i class="fa-solid fa-chevron-left"></i>
-                        <p>xx/xx - xx/xx</p>
+                        <h2>01/06 - 14/06</h2>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
 
 
                     <div class="eventFilter">
-                        <p>Filter</p>
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <div class="filterKnap" onclick="toggleFilter()">
+                            <p>Filter</p>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="filterDropdown" style="display: none;">
+                            <div class="filterListe"></div>
+                            <!-- Bruger js til at indlæse alle kategorierne fra wordpress, så filteret er dynamisk og
+                            opdateres automatisk når der kommer nye kategorier eller events til. -->
+                        </div>
                     </div>
                 </div>
 
                 <article class="events">
                     <div class="eventsCards">
-                        <a href="./specifikEvent.html" class="eventCard">
-                            <a href="./specifikEvent.html"></a>
-                            <img src="" alt="">
-                            <div class="eventCardText">
-                                <h3>Børnenes dag hver søndag</h3>
-                                <p>Hver søndag forvandles Aalborg Streetfood til et sandt kreativt paradis for de
-                                    yngste.
-                                </p>
-                                <button>Læs mere</button>
-                            </div>
-                        </a>
-
+                        <!-- Her indsættes events cards med js -->
+                    </div>
+                </article>
+                </div>
         </section>
 
 
