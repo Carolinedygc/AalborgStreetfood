@@ -82,6 +82,11 @@ body {
         color: var(--textColor)
     }
 
+    .tilbageKnap {
+        color: var(--textColor);
+        font-size: var(--smallHeaderTextSize);
+
+    }
 
 
     /* HEADER */
@@ -163,6 +168,14 @@ body {
 
     }
 
+    hr {
+        width: 100%;
+        height: 3px;
+        border: none;
+        background-color: var(--primaryColor);
+        margin-block: var(--gap);
+    }
+
 
 
 
@@ -238,6 +251,7 @@ body {
         justify-content: space-between;
         font-family: var(--textFont);
         font-size: var(--smallHeaderTextSize);
+        padding-inline: var(--gap);
 
         .clickHere {
             text-decoration: underline;
@@ -329,7 +343,7 @@ body {
                     display: flex;
                     flex-direction: column;
                     gap: var(--smallGap);
-                    padding-top: var(--smallGap);
+                    padding-bottom: var(--gap);
 
                     .uge1,
                     .uge2,
