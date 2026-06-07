@@ -1,31 +1,42 @@
-.sted {
+.billetSektion {
+    width: 100%;
+}
+
+/* sørg for at selve rækken med "Billetter" og prisen står på én linje og i hver sin ende */
+.billetSektion .billetRække {
     display: flex;
     align-items: center;
-    margin-left: auto;
-    gap: var(--gap);
-}
-
-.tid {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    gap: var(--gap);
-}
-
-.eventContainer,
-h1 {
-    margin-bottom: 0;
-}
-
-.billetter,
-h2 {
-    display: flex;
     justify-content: space-between;
+    /* skubber titel til venstre og pris til højre */
+    gap: var(--gap);
+    width: 100%;
+}
+
+/* ekstra sikring af prisplacering */
+.billetPris {
+    margin: 0;
 }
 
 button {
+    display: block;
+    margin-left: auto;
+}
 
-    align-items: flex-end;
-    margin-right: 10px;
+hr {
+    width: 100%;
+    height: 3px;
+    border: none;
+    background-color: var(--primaryColor);
+    margin-block: var(--gap);
+}
 
+.eventBeskrivelse p {
+    white-space: pre-line;
+    /*laver linebreaks i beskrivelses teksten ligesom der er i WP*/
+}
+
+.eventLokation {
+    width: 100%;
+    object-fit: cover;
+    margin-top: var(--gap);
 }
