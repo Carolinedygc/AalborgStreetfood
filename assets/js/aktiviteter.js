@@ -16,7 +16,15 @@ async function getFasteAktiviteter() {
         const fasteAktiviteter = await responseFaste.json();
         renderFasteAktiviteter(fasteAktiviteter);
     } catch (error) {
-        console.error("Fejl ved hentning af faste aktiviteter:", error);
+        cconsole.error("Fejl:", error); //viser fejl i konsol hvis der er problemer med at hente data fra api'et
+
+        // Vis fejlbesked på siden
+        const fejl = document.querySelector(".overlaySection");
+        fejl.innerHTML = `
+        <div class="fejlbesked">
+            <p>Noget gik galt, prøv at genindlæse siden.</p>
+        </div>
+    `;
     }
 }
 
@@ -54,7 +62,15 @@ async function getBørneAktiviteter() {
         const børneAktiviteter = await responseBørne.json();
         renderBørneAktiviteter(børneAktiviteter);
     } catch (error) {
-        console.error("Fejl ved hentning af børne aktiviteter:", error);
+        console.error("Fejl:", error); //viser fejl i konsol hvis der er problemer med at hente data fra api'et
+
+        // Vis fejlbesked på siden
+        const fejl = document.querySelector(".overlaySection");
+        fejl.innerHTML = `
+        <div class="fejlbesked">
+            <p>Noget gik galt, prøv at genindlæse siden.</p>
+        </div>
+    `;
     }
 }
 

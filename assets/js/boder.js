@@ -19,7 +19,15 @@ async function getAllBoder() {
 
         renderBoder(posts);
     } catch (error) {
-        console.error("Fejl ved visning af boder:", error);
+        console.error("Fejl:", error); //viser fejl i konsol hvis der er problemer med at hente data fra api'et
+
+        // Vis fejlbesked på siden
+        const fejl = document.querySelector(".overlaySection");
+        fejl.innerHTML = `
+        <div class="fejlbesked">
+            <p>Noget gik galt, prøv at genindlæse siden.</p>
+        </div>
+    `;
     }
 }
 

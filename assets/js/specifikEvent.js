@@ -17,7 +17,15 @@ async function getEvent() {
         renderEvent(post); //kører funktionen til at vise event på siden
 
     } catch (error) {
-        console.error("Fejl:", error); //viser fejl på skærmen hvis der er problemer med at hente data fra api'et
+        cconsole.error("Fejl:", error); //viser fejl i konsol hvis der er problemer med at hente data fra api'et
+
+        // Vis fejlbesked på siden
+        const fejl = document.querySelector(".overlaySection");
+        fejl.innerHTML = `
+        <div class="fejlbesked">
+            <p>Noget gik galt, prøv at genindlæse siden.</p>
+        </div>
+    `;
     }
 }
 
