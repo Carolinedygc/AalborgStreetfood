@@ -1,4 +1,4 @@
-// Definer basis-URL til WordPress REST API
+// Definer basis-URL til WordPress REST API 
 const baseUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/posts";
 
 const params = new URLSearchParams(window.location.search); //https://www.w3schools.com/jsref/prop_loc_search.asp
@@ -36,8 +36,8 @@ function renderAktivitet(post) {
 
 
     // laver pakker HTML - vises kun hvis pakken har en overskrift
-    const pakker = [post.acf.pakke, post.acf.pakker_2, post.acf.pakke_3] // pakkenavne fra wordpress
-        .filter(pakke => pakke.pakke_overskrift) // fjerner tomme pakker
+    const pakker = [post.acf.pakke_1, post.acf.pakke_2, post.acf.pakke_3] // pakkenavne fra wordpress
+        .filter(pakke => pakke && pakke.pakke_overskrift) // fjerner tomme pakker
         .map(pakke => { // laver HTML for hver pakke
             const beskrivelse = pakke.pakke_intro
                 ? `<p>${pakke.pakke_intro}</p>`
@@ -45,7 +45,7 @@ function renderAktivitet(post) {
 
             const pris = pakke.pakke_pris // viser pris kun hvis der er en pris i pakken, ellers vises Gratis
                 ? `<h3 class="pakkePris"> ${pakke.pakke_pris} kr</h3>`
-                : "Gratis";
+                : "";
 
             return `<div class="pakke">
             <div class="pakkeHeader">

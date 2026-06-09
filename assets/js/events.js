@@ -77,8 +77,9 @@ function renderEvents(posts) {
     eventContainer.innerHTML = "";
 
     posts.forEach(post => {
-        const sticker = post.acf.billet_pris
-            ? `<div class="sticker"><p>${post.acf.billet_pris}</p></div>`
+
+        const sticker = post.acf.sticker?.length
+            ? `<div class="sticker"><p>${post.acf.sticker[0]}</p></div>`
             : "";
 
         eventContainer.innerHTML += `
