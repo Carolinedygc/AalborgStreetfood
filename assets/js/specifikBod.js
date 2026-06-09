@@ -42,7 +42,7 @@ function renderBod(post) {
 
     // viser hero billede med alt tekst
     const heroBillede = document.querySelector(".heroBillede");
-    heroBillede.innerHTML = `<img src="${post.acf.herocard_billede}" alt="Billede af mad fra ${post.acf.titel}">`;
+    heroBillede.innerHTML = `<img src="${post.acf.herocard_billede.sizes["medium_large"]}" alt="Billede af mad fra ${post.acf.titel}">`;
 
 
     // Find alle samlinger dynamisk (menu_samling_1, menu_samling_2 osv.)
@@ -145,7 +145,7 @@ function renderBod(post) {
                 <hr>
             </div>
         </article>
-        <img class="bodBillede" src="${post.acf.billede_slider.billede_1}" alt="Billede fra ${post.acf.titel}">
+        <img class="bodBillede" src="${post.acf.billede_slider.billede_1.sizes["medium_large"]}" alt="Billede fra ${post.acf.titel}">
     <div class="seOgså">
     <h2>Se også...</h2>
 
@@ -174,7 +174,7 @@ function renderBod(post) {
 
     </div>
     <h2>Find os her:</h2>
-    <img class="bodPlaceringsBillede" src="${post.acf.bod_placering}" alt="Billede fra ${post.acf.titel}">    
+    <img class="bodPlaceringsBillede" src="${post.acf.bod_placering.sizes["medium_large"]}" alt="Billede fra ${post.acf.titel}">    
     `;
 
 
@@ -191,7 +191,4 @@ function renderBod(post) {
         menuItems.style.display = erSkjult ? "flex" : "none"; // hvis erSkjult er true, så sæt display til flex for at vise menu items, ellers sæt display til none for at skjule menu items
         pil.classList.toggle("roteret"); // toggler klassen "roteret" på pilen for at rotere den
     });
-
-
-    console.log(post.acf.billede_slider);
 }

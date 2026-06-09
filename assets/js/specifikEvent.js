@@ -26,9 +26,9 @@ function renderEvent(post) {
 
     eventContainer.innerHTML = ""; // Ryd containeren før tilføjelse
 
-    // viser hero billede med alt tekst
+    // viser hero billede med alt tekst - bruger medium_large størrelse
     const heroBillede = document.querySelector(".heroBillede img");
-    heroBillede.src = post.acf.hero_billede;
+    heroBillede.src = post.acf.hero_billede.sizes["medium_large"];
     heroBillede.alt = `Billede af ${post.acf.overskrift_event}`;
 
     // viser sticker kun hvis der er indhold i acf.sticker
@@ -49,14 +49,9 @@ function renderEvent(post) {
                 </article>`
         : "";
 
-    // viser billede kun hvis billede_1 er udfyldt
-    const billede = post.acf.billede_slider.billede_1
-        ? `<img class="eventBillede" src="${post.acf.billede_slider.billede_1}" alt="Billede fra ${post.acf.overskrift_event}">`
-        : "";
-
     // viser lokationskort kun hvis aktivitet_lokation er udfyldt
     const lokation = post.acf.aktivitet_lokation
-        ? `<img class="eventLokation" src="${post.acf.aktivitet_lokation.url}" alt="Kort over lokation for ${post.acf.overskrift_event}">`
+        ? `<img class="eventLokation" src="${post.acf.aktivitet_lokation.sizes["medium_large"]}" alt="Kort over lokation for ${post.acf.overskrift_event}">`
         : "";
 
     // viser event beskrivelse kun hvis event_beskrivelse er udfyldt
@@ -83,8 +78,6 @@ function renderEvent(post) {
         <div class="eventBeskrivelse" id="beskrivelse">
             ${beskrivelse}
         </div>
-
-        ${billede}
 
         ${lokation}
     `;

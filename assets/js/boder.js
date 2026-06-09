@@ -1,10 +1,6 @@
 // Definer basis-URL til WordPress REST API
 const baseUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/posts";
 
-
-
-
-
 // Madboders id er 3
 const categoryId = 3;
 
@@ -41,7 +37,7 @@ function renderBoder(posts) {
         boderContainer.innerHTML += `
                         <a href="./specifikBod.html?id=${post.id}" class="bodCard">
 
-                    <img src="${post.acf.herocard_billede}" alt="Billede af mad fra ${post.acf.titel}" loading="lazy">
+                    <img src="${post.acf.herocard_billede.sizes["medium_large"]}" alt="Billede af mad fra ${post.acf.titel}" loading="lazy">
                     ${sticker}
                     <div class="bodCardText">
                         <h2>${post.acf.titel}</h2>

@@ -29,14 +29,14 @@ function renderAktivitet(post) {
 
     aktivitetContainer.innerHTML = ""; // Ryd containeren før tilføjelse
 
-    // viser hero billede med alt tekst
+    // viser hero billede med alt tekst - bruger medium_large størrelse
     const heroBillede = document.querySelector(".heroBillede img");
-    heroBillede.src = post.acf.hero_billede.url;
+    heroBillede.src = post.acf.hero_billede.sizes["medium_large"];
     heroBillede.alt = `Billede af ${post.acf.overskrift_aktivitet}`;
 
 
     // laver pakker HTML - vises kun hvis pakken har en overskrift
-    const pakker = [post.acf.pakker, post.acf.pakker_Kopier, post.acf.pakker_Kopier2]
+    const pakker = [post.acf.pakke, post.acf.pakker_2, post.acf.pakke_3] // pakkenavne fra wordpress
         .filter(pakke => pakke.pakke_overskrift) // fjerner tomme pakker
         .map(pakke => { // laver HTML for hver pakke
             const beskrivelse = pakke.pakke_intro
@@ -69,11 +69,6 @@ function renderAktivitet(post) {
             </article>`
         : "";
 
-    // viser billede kun hvis billede_1 er udfyldt
-    const billede = post.acf.billede_slider.billede_1
-        ? `<img class="aktivitetBillede" src="${post.acf.billede_slider.billede_1}" alt="Billede fra ${post.acf.overskrift_aktivitet}">`
-        : "";
-
     // tilføjer html til siden og indsætter dynamisk fra wordpress
     aktivitetContainer.innerHTML = `
         <article class="introSektion">
@@ -85,8 +80,6 @@ function renderAktivitet(post) {
 
         ${pakkerSektion}
 
-        ${billede}
-
-        <img class="aktivitetLokation" src="${post.acf.aktivitet_lokation.url}" alt="Kort over lokation for ${post.acf.overskrift_aktivitet}">
+        <img class="aktivitetLokation" src="${post.acf.aktivitet_lokation.sizes["medium_large"]}" alt="Kort over lokation for ${post.acf.overskrift_aktivitet}">
     `;
 }
