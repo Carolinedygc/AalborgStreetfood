@@ -266,7 +266,6 @@ body {
         max-height: 0;
         overflow: hidden;
         pointer-events: none;
-        transition: transform 0.6s ease, opacity 0.6s ease, max-height 0.6s ease;
 
         .toggle {
             display: flex;
@@ -416,6 +415,11 @@ body {
             }
         }
 
+    }
+
+    .fullOpeninghours.animate,
+    .fullOpeninghoursFood.animate {
+        transition: transform 0.6s ease, opacity 0.6s ease, max-height 0.6s ease;
     }
 
     .fullOpeninghours.active,
