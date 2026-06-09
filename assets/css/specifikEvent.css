@@ -43,3 +43,7 @@ a {
         font-size: var(--middleHeaderTextSize);
     }
 }
+
+html {
+    scroll-behavior: smooth;
+}

@@ -158,7 +158,7 @@ function renderBod(post) {
     <h2>Se også...</h2>
 
                 <article class="bodCards">
-                    <a href="./specifikBod.html?id=1678" class="bodCard">
+                    <a href="./specifikBod.html?id=3860" class="bodCard">
 
                         <img src="./assets/img/bar_madame.jpg" alt="Bar Madame">
                       

@@ -39,10 +39,6 @@ function renderEvent(post) {
     heroBillede.src = post.acf.hero_billede.sizes["medium_large"];
     heroBillede.alt = `Billede af ${post.acf.overskrift_event}`;
 
-    // viser sticker kun hvis der er indhold i acf.sticker
-    const sticker = post.acf.sticker
-        ? `<div class="sticker"><p>${post.acf.sticker}</p></div>`
-        : "";
 
     // viser billet sektion kun hvis der er en billet overskrift
     const billetSektion = post.acf.billetter.billet_overskrift
@@ -50,7 +46,7 @@ function renderEvent(post) {
                
                 <div class="billetRække">
                     <h3>Billetter</h3>
-                    <h3 class="billetPris">${post.acf.billetter.billet_pris ? `${post.acf.billetter.billet_pris} kr` : ""}</h3>
+                    <h3 class="billetPris">${post.acf.billetter.billet_pris ? `${post.acf.billetter.billet_pris}` : ""}</h3>
                 </div>
                 ${post.acf.booking_link ? `<button onclick="window.open('${post.acf.booking_link}', '_blank')">${post.acf.billetter.billet_overskrift}</button>` : ""}
             
@@ -69,13 +65,13 @@ function renderEvent(post) {
 
     // tilføjer html til siden og indsætter dynamisk fra wordpress
     eventContainer.innerHTML = `
-        ${sticker}
+
 
         <article class="introSektion">
             <h1>${post.acf.overskrift_event}</h1>
             <div class="eventMeta">
-                <p><i class="fa-regular fa-clock"></i> ${post.acf.dato_tid}</p>
-                <p><i class="fa-solid fa-location-dot"></i> ${post.acf.lokation}</p>
+                <h2><i class="fa-regular fa-clock"></i> ${post.acf.dato_tid}</h2>
+                <h2><i class="fa-solid fa-location-dot"></i> ${post.acf.lokation}</h2>
             </div>
             <p>${post.acf.intro_tekst}</p>
             <a href="#beskrivelse"><button>Læs mere</button></a>
