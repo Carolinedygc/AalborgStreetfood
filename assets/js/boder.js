@@ -41,7 +41,7 @@ function renderBoder(posts) {
         boderContainer.innerHTML += `
                         <a href="./specifikBod.html?id=${post.id}" class="bodCard">
 
-                    <img src="${post.acf.herocard_billede}" alt="Billede af mad fra ${post.acf.titel}">
+                    <img src="${post.acf.herocard_billede}" alt="Billede af mad fra ${post.acf.titel}" loading="lazy">
                     ${sticker}
                     <div class="bodCardText">
                         <h2>${post.acf.titel}</h2>
