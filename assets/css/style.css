@@ -522,3 +522,9 @@ body {
 main {
     min-height: 100vh;
 }
+
+.fejlbesked {
+    display: flex;
+    justify-content: center;
+    padding: var(--gap);
+}

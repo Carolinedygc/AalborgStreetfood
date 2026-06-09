@@ -213,6 +213,7 @@ function renderOpeningHours() {
             fullOpeningHoursFood.classList.remove('active');
 
         } else {
+
             // Tilføj .animate så CSS-transitionen aktiveres ved åbning
             fullOpeningHours.classList.add('animate');
 
