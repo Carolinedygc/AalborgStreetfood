@@ -33,7 +33,7 @@ function renderFasteAktiviteter(posts) {
         // tilføjer kort for hver aktivitet med link til specifik aktivitetsside
         aktiviteterContainer.innerHTML += `
             <a href="./specifikAktivitet.html?id=${post.id}" class="aktivitetCard">
-                <img src="${post.acf.hero_billede.url}" alt="Billede af ${post.acf.overskrift_aktivitet}" loading="lazy">
+                <img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_aktivitet}" loading="lazy">
                 ${sticker}
                 <div class="aktivitetCardText">
                     <h3>${post.acf.overskrift_aktivitet}</h3>
@@ -70,7 +70,7 @@ function renderBørneAktiviteter(posts) {
 
         aktiviteterContainer.innerHTML += `
             <a href="./specifikAktivitet.html?id=${post.id}" class="aktivitetCard">
-                <img src="${post.acf.hero_billede.url}" alt="Billede af ${post.acf.overskrift_aktivitet}" loading="lazy">
+                <img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_aktivitet}" loading="lazy">
                 ${sticker}
                 <div class="aktivitetCardText">
                     <h3>${post.acf.overskrift_aktivitet}</h3>

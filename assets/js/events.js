@@ -83,7 +83,7 @@ function renderEvents(posts) {
 
         eventContainer.innerHTML += `
             <a href="./specifikEvent.html?id=${post.id}" class="eventCard">
-                <img src="${post.acf.hero_billede}" alt="Billede af event" loading="lazy">
+                <img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af event" loading="lazy">
                 ${sticker}
                 <div class="eventCardText">
                     <h2>${post.acf.overskrift_event}</h2>
