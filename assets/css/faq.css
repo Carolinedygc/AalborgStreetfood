@@ -46,26 +46,25 @@ button {
     overflow: hidden;
     transition: max-height 0.3s ease;
 
-    p {
-        padding: var(--gap);
-    }
 
+
+
+}
+
+p,
+h3 {
+
+    margin: var(--smallGap) var(--gap);
 }
 
 .accordionIndhold.aktiv {
     max-height: 450px;
     background-color: #FFD8E4;
 
-    p {
-        padding: var(--gap);
-    }
-
-    h3 {
-        padding: 0 var(--gap);
-    }
 
     a {
         color: var(--textColor);
+        text-decoration: underline;
     }
 }
 

@@ -47,11 +47,13 @@ function renderBoder(posts) {
 
                     <img src="${post.acf.herocard_billede.sizes["medium_large"]}" alt="Billede af mad fra ${post.acf.titel}" loading="lazy">
                     ${sticker}
+                    <div class="cardIndhold">
                     <div class="bodCardText">
                         <h2>${post.acf.titel}</h2>
                         <p>${post.acf.intro_tekst}
                         </p>
-                        <button>Læs mere</button>
+                        </div>
+                    <button>Læs mere</button>
                     </div>
                 </a>
         `});
