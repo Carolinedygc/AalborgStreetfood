@@ -1,12 +1,13 @@
 // Definer basis-URL til WordPress REST API 
 const baseUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/posts";
 
+// Finder id fra det card men har trykket på
 const params = new URLSearchParams(window.location.search); //https://www.w3schools.com/jsref/prop_loc_search.asp
 const aktivitetId = params.get("id");
 
 
 // Funktion til at hente én specifik aktivitet baseret på id'et i URL'en
-getAktivitet();
+getAktivitet(); //kalder funktion getAktivitet
 
 async function getAktivitet() {
     try {
@@ -31,9 +32,9 @@ async function getAktivitet() {
     }
 }
 
-
+// Funktion til at vise den specifikke aktivitet på siden
 function renderAktivitet(post) {
-    const aktivitetContainer = document.querySelector(".aktivitetContainer");
+    const aktivitetContainer = document.querySelector(".aktivitetContainer"); //Fang containeren hvor aktiviteten skal vises
 
     aktivitetContainer.innerHTML = ""; // Ryd containeren før tilføjelse
 
@@ -47,13 +48,15 @@ function renderAktivitet(post) {
     const pakker = [post.acf.pakke_1, post.acf.pakke_2, post.acf.pakke_3] // pakkenavne fra wordpress
         .filter(pakke => pakke && pakke.pakke_overskrift) // fjerner tomme pakker
         .map(pakke => { // laver HTML for hver pakke
-            const beskrivelse = pakke.pakke_intro
+
+            const beskrivelse = pakke.pakke_intro // viser beskrivelse hvis der er en
                 ? `<p>${pakke.pakke_intro}</p>`
                 : "";
 
-            const pris = pakke.pakke_pris // viser pris kun hvis der er en pris i pakken, ellers vises Gratis
+            const pris = pakke.pakke_pris // viser pris kun hvis der er en pris i pakken
                 ? `<h3 class="pakkePris"> ${pakke.pakke_pris} kr</h3>`
                 : "";
+
 
             return `<div class="pakke">
             <div class="pakkeHeader">
@@ -66,7 +69,7 @@ function renderAktivitet(post) {
 
     // viser booking knap kun hvis der er et booking link
     const bookingLink = post.acf.booking_link
-        ? `<button onclick="window.open('${post.acf.booking_link}', '_blank')">Book ${post.acf.overskrift_aktivitet}</button>`
+        ? `<a href="${post.acf.booking_link}" target="_blank" rel="noopener noreferrer" class="knap">Book ${post.acf.overskrift_aktivitet}</a>`
         : "";
 
     // viser pakker sektion kun hvis der er pakker, ellers vises ingenting (gratis aktivitet)

@@ -1,10 +1,12 @@
+// Definer basis-URL til WordPress REST API
 const baseUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/posts";
 
-const params = new URLSearchParams(window.location.search);
+// Finder id fra det card men har trykket på
+const params = new URLSearchParams(window.location.search); //https://www.w3schools.com/jsref/prop_loc_search.asp
 const eventId = params.get("id");
 
 // Funktion til at hente ét specifikt event baseret på id'et i URL'en
-getEvent();
+getEvent(); //Kalder funktionen
 
 async function getEvent() {
     try {
@@ -29,12 +31,12 @@ async function getEvent() {
     }
 }
 
+// Funktion til at vise den specifikke event på siden
 function renderEvent(post) {
     const eventContainer = document.querySelector(".eventContainer");
 
     eventContainer.innerHTML = ""; // Ryd containeren før tilføjelse
 
-    // viser hero billede med alt tekst - bruger medium_large størrelse
     // viser hero billede med alt tekst - bruger medium_large størrelse
     const heroBillede = document.querySelector(".heroBillede");
     heroBillede.innerHTML = `<img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_event}">`;
@@ -47,10 +49,16 @@ function renderEvent(post) {
                     <h3>Billetter</h3>
                     <h3 class="billetPris">${post.acf.billetter.billet_pris ? `${post.acf.billetter.billet_pris}` : ""}</h3>
                 </div>
-                ${post.acf.booking_link ? `<button onclick="window.open('${post.acf.booking_link}', '_blank')">${post.acf.billetter.billet_overskrift}</button>` : ""}
+            ${post.acf.booking_link
+            ? `<div class="knapWrapper">
+           <a href="${post.acf.booking_link}" target="_blank" rel="noopener noreferrer" class="knap">${post.acf.billetter.billet_overskrift}</a>
+       </div>`
+            : ""}
             
                 </article>`
         : "";
+
+
 
     // viser lokationskort kun hvis aktivitet_lokation er udfyldt
     const lokation = post.acf.aktivitet_lokation
@@ -73,7 +81,7 @@ function renderEvent(post) {
                 <h2><i class="fa-solid fa-location-dot"></i> ${post.acf.lokation}</h2>
             </div>
             <p>${post.acf.intro_tekst}</p>
-            <a href="#beskrivelse"><button>Læs mere</button></a>
+            <div class="knapWrapper"><a href="#beskrivelse"><button>Læs mere</button></a></div>
         </article>
 <hr>
         ${billetSektion}

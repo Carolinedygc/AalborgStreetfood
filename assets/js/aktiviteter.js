@@ -28,7 +28,7 @@ async function getFasteAktiviteter() {
     }
 }
 
-// Render faste aktiviteter på siden
+// Render faste aktiviteter på siden i den valgte container/slider
 function renderFasteAktiviteter(posts) {
     const aktiviteterContainer = document.querySelector(".fasteAktiviteterCards"); // Vælger containeren for faste aktiviteter
     aktiviteterContainer.innerHTML = ""; // Ryd containeren før tilføjelse
@@ -38,7 +38,7 @@ function renderFasteAktiviteter(posts) {
         const sticker = post.acf.sticker?.[0]
             ? `<div class="sticker"><p>${post.acf.sticker[0]}</p></div>` : "";
 
-        // tilføjer kort for hver aktivitet med link til specifik aktivitetsside
+        // tilføjer card for hver aktivitet med link til specifik aktivitetsside
         aktiviteterContainer.innerHTML += `
             <a href="./specifikAktivitet.html?id=${post.id}" class="aktivitetCard">
                 <img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_aktivitet}" loading="lazy">
@@ -51,7 +51,7 @@ function renderFasteAktiviteter(posts) {
         `;
     });
 
-    aktiviteterContainer.innerHTML += `<div class="scroll fast"><i class="fa-solid fa-chevron-right"></i></div>`; // tilføjer scroll knap efter alle kort er renderet
+    aktiviteterContainer.innerHTML += `<div class="scroll fast"><i class="fa-solid fa-chevron-right"></i></div>`; // tilføjer scroll knap efter alle cards er renderet
 }
 
 
@@ -74,7 +74,7 @@ async function getBørneAktiviteter() {
     }
 }
 
-// Render børne aktiviteter på siden
+// Render børne aktiviteter på siden i den valgte container/slider
 function renderBørneAktiviteter(posts) {
     const aktiviteterContainer = document.querySelector(".børneAktiviteterCards"); // Vælger containeren for børne aktiviteter
     aktiviteterContainer.innerHTML = ""; // Ryd containeren før tilføjelse
@@ -96,5 +96,5 @@ function renderBørneAktiviteter(posts) {
         `;
     });
 
-    aktiviteterContainer.innerHTML += `<div class="scroll børn"><i class="fa-solid fa-chevron-right"></i></div>`; // tilføjer scroll knap efter alle kort er renderet
+    aktiviteterContainer.innerHTML += `<div class="scroll børn"><i class="fa-solid fa-chevron-right"></i></div>`; // tilføjer scroll knap efter alle cards er renderet
 }

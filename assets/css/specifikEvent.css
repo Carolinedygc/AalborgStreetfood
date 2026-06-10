@@ -4,9 +4,10 @@
     justify-content: space-between;
 }
 
-button {
-    display: block;
-    margin-left: auto;
+/* Får knapper til at stå til højre */
+.knapWrapper {
+    display: flex;
+    justify-content: flex-end;
 }
 
 a {
@@ -19,12 +20,14 @@ a {
     /*laver linebreaks i beskrivelses teksten ligesom der er i WP*/
 }
 
+/* Lokations billede */
 .eventLokation {
     width: 100%;
     object-fit: cover;
     margin-top: var(--gap);
 }
 
+/* Sticker i toppen af siden - på overlay */
 .sticker {
     background-color: var(--primaryColor);
     color: var(--textColor);
@@ -44,6 +47,7 @@ a {
     }
 }
 
+/* Gør sådan at når man trykker på læs mere, så scroller den ned til teksten */
 html {
     scroll-behavior: smooth;
 }

@@ -2,6 +2,7 @@ a {
     text-decoration: none;
 }
 
+/* Får kontakt knap til at stå til højre */
 .knapWrapper {
     display: flex;
     justify-content: flex-end;
@@ -70,6 +71,7 @@ a {
     }
 }
 
+/* Gør udvalgt tekst fed */
 .fed {
     font-weight: bolder;
 }

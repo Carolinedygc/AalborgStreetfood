@@ -1,17 +1,19 @@
 // Definer basis-URL til WordPress REST API
 const baseUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/posts";
 
+// Finder id fra det card men har trykket på
 const params = new URLSearchParams(window.location.search); //https://www.w3schools.com/jsref/prop_loc_search.asp
 const bodId = params.get("id");
 
 
 // Funktion til at hente én specifik opskrift
-getBod();
+getBod(); //kalder funktionen
+
 
 async function getBod() {
     try {
         const response = await fetch(
-            `${baseUrl}/${bodId}?acf_format=standard` //tager id fra den opskrift man har trykket på fra url, og tilføjer til vores api url, sammen med acf_format=standard for at få fat i acf felterne.
+            `${baseUrl}/${bodId}?acf_format=standard` //tager id fra det card man har trykket på fra url, og tilføjer til vores api url, sammen med acf_format=standard for at få fat i acf felterne.
         );
 
         const post = await response.json(); // konverterer json til javascript objekt
@@ -33,7 +35,7 @@ async function getBod() {
 
 
 
-
+// Funktion til at vise den specifikke bod på siden
 function renderBod(post) {
     const bodContainer = document.querySelector(".bodContainer");
 
@@ -54,7 +56,7 @@ function renderBod(post) {
 
 
     // Find alle samlinger dynamisk (menu_samling_1, menu_samling_2 osv.)
-    // og filtrer dem så kun samlinger med en overskrift vises
+    // og filtrer dem så kun samlinger med en overskrift vises og dermed ikke tomme samlinger
     const samlinger = Object.keys(post.acf.menukort)
         .filter(key => key.startsWith("menu_samling_")) // filter finder alle keys i samling objektet der starter med "menu_samling_" og returnerer dem som et array
         .map(key => post.acf.menukort[key]) // map laver html for hver samling
@@ -64,7 +66,7 @@ function renderBod(post) {
     // Lav HTML for alle samlinger
     const samlingsHTML = samlinger.map(samling => {
 
-        // Find alle retter i denne samling
+        // Find alle retter i en samling
         const retter = Object.keys(samling)
             .filter(key => key.startsWith("ret_")) // filter finder alle keys i samling objektet der starter med "ret_" og returnerer dem som et array
             .map(key => samling[key]) // map laver html for hver ret
@@ -89,7 +91,7 @@ function renderBod(post) {
             </div>
             <p>${ret.ret_beskrivelse}</p>
         </div>`;
-        }).join("");
+        }).join(""); // join kombinerer alle retter til en string, så vi kan indsætte det i html
 
         // Vis kun beskrivelse og pris hvis de er udfyldt
         const beskrivelseHTML = samling.samling_beskrivelse
@@ -107,7 +109,7 @@ function renderBod(post) {
                     <p class="samlingPris">${prisHTML}</p>
                 </div>
                 ${retterHTML}`;
-    }).join("");
+    }).join(""); // join kombinerer alle samlinger med deres tilhørende retter til en string, så vi kan indsætte det i html
 
     // tilføjer html til siden og indsætter dynamisk fra wordpress
     bodContainer.innerHTML += `
