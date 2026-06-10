@@ -69,7 +69,8 @@ body {
 
     /* KNAPPER OG IKONER*/
     /* buttons */
-    button {
+    button,
+    .knap {
         background-color: var(--secondaryColor);
         color: var(--textColor);
         width: 100px;
@@ -77,18 +78,25 @@ body {
         border-radius: 5px;
         border: none;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--bodyText);
+        font-family: var(--textFont);
     }
 
-    button:hover {
+    button:hover,
+    .knap:hover {
         background-color: var(--darkSecondaryColor);
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
     }
 
-    button:active {
+    button:active,
+    .knap:active {
         background-color: var(--darkSecondaryColor);
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
     }
-
 
     .allergeneIkon {
         color: var(--textColor)
@@ -174,9 +182,7 @@ body {
         padding: 20px;
         padding-bottom: 200px;
 
-        .beskrivelsesTekst {
-            padding: var(--gap) 0;
-        }
+
 
     }
 
