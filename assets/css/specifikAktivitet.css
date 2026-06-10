@@ -13,8 +13,10 @@
     gap: var(--gap);
     margin-block: var(--sectionPadding);
 
-    button {
+    .knap {
+        padding: var(--smallGap);
         align-self: flex-end;
+        text-align: center;
     }
 }
 
@@ -48,14 +50,6 @@
 }
 
 
-
-/* Aktivitet billede */
-.aktivitetBillede {
-    width: 100%;
-    max-height: 250px;
-    object-fit: cover;
-    margin-block: var(--gap);
-}
 
 /* Lokationskort */
 .aktivitetLokation {

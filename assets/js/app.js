@@ -1,6 +1,9 @@
-renderOpeningHours(); // indsætter åbningstider på siden
 
-// I stedet for at indsætte åbningstiderne direkte i hvert HTML, laver vi en funktion der indsætter det i alle HTML'er på én gang
+// JavaScript for åbningstider:
+
+renderOpeningHours(); // kalder funktionen for at indsætte åbningstiderne i HTML
+
+// I stedet for at indsætte åbningstiderne direkte i hvert HTML, laver vi en funktion der indsætter det i alle HTML'er på én gang i den div med class openingHours
 function renderOpeningHours() {
     const openingHours = document.querySelector(".openingHours");
     openingHours.innerHTML = `
@@ -189,14 +192,14 @@ function renderOpeningHours() {
     `;
 
 
-
-    const clickHere = document.querySelector('.clickHere');           // knappen der åbner/lukker
-    const fullOpeningHours = document.querySelector('.fullOpeninghours');         // streetfood-kalender
+    // Fanger alle elementer med klassen "openingHours", "fullOpeninghours" og "fullOpeningHoursFood"
+    const clickHere = document.querySelector('.openingHours'); // åbningstider bjælke der åbner/lukker
+    const fullOpeningHours = document.querySelector('.fullOpeninghours'); // streetfood-kalender
     const fullOpeningHoursFood = document.querySelector('.fullOpeninghoursFood'); // madboder-kalender
 
 
     // ÅBEN/LUK KNAP
-    // Når brugeren klikker på "Se vores åbningstider"
+    // Når brugeren klikker på den hvide bjælke med åbningstider, skal den åbne/lukke
     clickHere.addEventListener('click', () => {
 
         // Tjek om streetfood ELLER madboder allerede er åben

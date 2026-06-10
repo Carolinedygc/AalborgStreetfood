@@ -2,6 +2,8 @@
     padding-bottom: var(--gap);
 }
 
+
+/* Styling af cards */
 .bodCards {
     gap: var(--smallGap);
     padding-bottom: var(--sectionPadding);
@@ -44,7 +46,6 @@
 
     button {
         align-self: flex-end;
-        /* margin: var(--smallGap) 0; */
     }
 
     img {

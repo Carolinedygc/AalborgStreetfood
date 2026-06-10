@@ -1,11 +1,13 @@
+// Definer basis-URL til WordPress REST API
 const baseUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/posts";
 const kategorierUrl = "https://test.lerkehallund.dk/wp-json/wp/v2/event_category";
-const categoryId = 22;
+const categoryId = 22; // Event kategori id
 
-// Henter kategorier og events når siden loader
+// Henter kategorier og events
 getKategorier();
 getAllEvents();
 
+// Filter dropdown
 // Henter alle event kategorier og viser dem i filter dropdown
 async function getKategorier() {
     try {
@@ -22,6 +24,7 @@ function renderKategorier(kategorier) {
     const filterListe = document.querySelector(".filterListe");
     filterListe.innerHTML = ""; // Ryd containeren før tilføjelse
 
+    // Tilføj en checkbox for hver kategori
     kategorier.forEach(kategori => {
         filterListe.innerHTML += `
             <label class="filterKategori">
@@ -42,7 +45,7 @@ function renderKategorier(kategorier) {
     });
 }
 
-// toggle filter dropdown
+// toggle filter dropdown mellem vist og skjult
 function toggleFilter() {
     const dropdown = document.querySelector(".filterDropdown");
     const pil = document.querySelector(".filterKnap i");
@@ -55,9 +58,9 @@ function toggleFilter() {
 async function getAllEvents(valgteKategorier = []) {
     try {
         // tilføjer event_category filter til url hvis der er valgte kategorier
-        const filterParam = valgteKategorier.length > 0
-            ? `&event_category=${valgteKategorier.join(",")}`
-            : "";
+        const filterParam = valgteKategorier.length > 0 //Tjekker om der er valgt kategorier
+            ? `&event_category=${valgteKategorier.join(",")}` // Hvis der er valgt kategorier, så tilføj dem til url'en
+            : ""; //ellers tilføj ingen filter
 
         const response = await fetch(
             `${baseUrl}?acf_format=standard&per_page=100&categories=${categoryId}&orderby=date&order=asc${filterParam}`
@@ -81,15 +84,18 @@ async function getAllEvents(valgteKategorier = []) {
 
 // Render events på siden
 function renderEvents(posts) {
-    const eventContainer = document.querySelector(".eventsCards");
-    eventContainer.innerHTML = "";
+    const eventContainer = document.querySelector(".eventsCards"); //finder containeren hvor events skal indsættes
+    eventContainer.innerHTML = ""; //tømmer for indhold først
 
+    // Loop igennem hvert event og tilføj det til containeren
     posts.forEach(post => {
 
+        // Hvis eventet har en sticker, vis den
         const sticker = post.acf.sticker?.length
             ? `<div class="sticker"><p>${post.acf.sticker[0]}</p></div>`
             : "";
 
+        //Indsæt indhold i containeren
         eventContainer.innerHTML += `
             <a href="./specifikEvent.html?id=${post.id}" class="eventCard">
                 <img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af event" loading="lazy">

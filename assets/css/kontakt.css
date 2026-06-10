@@ -1,3 +1,4 @@
+/* Kontakt info */
 .kontaktInfo {
     display: flex;
     flex-direction: column;
@@ -17,7 +18,7 @@
     }
 }
 
-
+/* Google maps kort */
 iframe {
     width: 100%;
     height: 300px;
