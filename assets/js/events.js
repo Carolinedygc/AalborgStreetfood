@@ -14,6 +14,14 @@ async function getKategorier() {
         renderKategorier(kategorier);
     } catch (error) {
         console.error("Fejl ved hentning af kategorier:", error);
+
+        // Vis fejlbesked på siden
+        const fejl = document.querySelector(".overlaySection");
+        fejl.innerHTML = `
+        <div class="fejlbesked">
+            <p>Noget gik galt, prøv at genindlæse siden.</p>
+        </div>
+    `;
     }
 }
 
