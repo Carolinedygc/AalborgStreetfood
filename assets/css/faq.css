@@ -2,10 +2,12 @@ a {
     text-decoration: none;
 }
 
-button {
-    display: block;
-    margin-left: auto;
+.knapWrapper {
+    display: flex;
+    justify-content: flex-end;
 }
+
+
 
 
 /* ACCORDIANS */
@@ -49,13 +51,13 @@ button {
 
 
 
+    p,
+    h3 {
+
+        margin: var(--smallGap) var(--gap);
+    }
 }
 
-p,
-h3 {
-
-    margin: var(--smallGap) var(--gap);
-}
 
 .accordionIndhold.aktiv {
     max-height: 450px;

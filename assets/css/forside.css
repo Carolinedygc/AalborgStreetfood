@@ -92,7 +92,8 @@
         /* skubber button til bunden */
     }
 
-    button {
+    button,
+    .knap {
         align-self: flex-end;
     }
 
@@ -143,7 +144,8 @@
         gap: var(--gap);
         padding-top: 15px;
 
-        button {
+        button,
+        .knap {
             width: 120px;
         }
     }

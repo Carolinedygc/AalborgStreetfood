@@ -159,25 +159,25 @@ function renderBod(post) {
 
                 <article class="bodCards">
                     <a href="./specifikBod.html?id=3860" class="bodCard">
-
-                        <img src="./assets/img/bar_madame.jpg" alt="Bar Madame">
-                      
-                        <div class="bodCardText">
-                            <h2>Bar Madame</h2>
-                            <p>Et bredt udvalg af kolde drikke fra specialøl og cocktails til forfriskende alkoholfri favoritter.</p>
-                            <button>Læs mere</button>
-                        </div>
-                    </a>
-                    <a href="./specifikBod.html?id=3667" class="bodCard">
-
-                        <img src="./assets/img/sweetvibes.png" alt="Sweet Vibes">
-                        <div class="bodCardText">
-                            <h2>Sweet Vibes</h2>
-                            <p>Lækker sulten? Kage, vafler og ægte italiensk gelato is finder du her.
-                            </p>
-                            <button>Læs mere</button>
-                        </div>
-                    </a>
+    <img src="./assets/img/bar_madame.webp" alt="Bar Madame">
+    <div class="cardIndhold">
+        <div class="bodCardText">
+            <h2>Bar Madame</h2>
+            <p>Et bredt udvalg af kolde drikke fra specialøl og cocktails til forfriskende alkoholfri favoritter.</p>
+        </div>
+        <button>Læs mere</button>
+    </div>
+</a>
+<a href="./specifikBod.html?id=3667" class="bodCard">
+    <img src="./assets/img/sweetvibes.webp" alt="Sweet Vibes">
+    <div class="cardIndhold">
+        <div class="bodCardText">
+            <h2>Sweet Vibes</h2>
+            <p>Lækker sulten? Kage, vafler og ægte italiensk gelato is finder du her.</p>
+        </div>
+        <button>Læs mere</button>
+    </div>
+</a>
                 </article>
 
     </div>
