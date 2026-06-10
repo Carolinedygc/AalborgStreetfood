@@ -17,7 +17,7 @@ async function getEvent() {
         renderEvent(post); //kører funktionen til at vise event på siden
 
     } catch (error) {
-        cconsole.error("Fejl:", error); //viser fejl i konsol hvis der er problemer med at hente data fra api'et
+        console.error("Fejl:", error); //viser fejl i konsol hvis der er problemer med at hente data fra api'et
 
         // Vis fejlbesked på siden
         const fejl = document.querySelector(".overlaySection");
@@ -35,10 +35,9 @@ function renderEvent(post) {
     eventContainer.innerHTML = ""; // Ryd containeren før tilføjelse
 
     // viser hero billede med alt tekst - bruger medium_large størrelse
-    const heroBillede = document.querySelector(".heroBillede img");
-    heroBillede.src = post.acf.hero_billede.sizes["medium_large"];
-    heroBillede.alt = `Billede af ${post.acf.overskrift_event}`;
-
+    // viser hero billede med alt tekst - bruger medium_large størrelse
+    const heroBillede = document.querySelector(".heroBillede");
+    heroBillede.innerHTML = `<img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_event}">`;
 
     // viser billet sektion kun hvis der er en billet overskrift
     const billetSektion = post.acf.billetter.billet_overskrift
