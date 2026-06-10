@@ -206,12 +206,8 @@ body {
             background-color: var(--primaryColor);
             display: flex;
             align-items: center;
-            justify-content: center;
-
-            display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: var(--gap);
+            padding: var(--smallGap);
 
             color: var(--textColor);
             font-size: var(--middleHeaderTextSize);
@@ -222,6 +218,10 @@ body {
                 flex-direction: column;
                 align-items: center;
                 width: 70px;
+
+                p {
+                    margin: 5px;
+                }
             }
 
 
@@ -246,8 +246,23 @@ body {
                 color: var(--darkSecondaryColor);
             }
 
+
         }
     }
+
+    .ugedage {
+
+        p {
+            margin: 5px;
+        }
+    }
+
+    .kalenderTop {
+        h2 {
+            margin-bottom: 5px;
+        }
+    }
+
 
 }
 
@@ -257,7 +272,7 @@ body {
     height: auto;
     border-radius: 50px 50px 0 0;
     box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1);
-    padding: var(--smallGap) var(--gap);
+    padding: var(--smallGap);
     transition: all 0.3s ease;
 
     .whenClosed {
@@ -266,15 +281,21 @@ body {
         justify-content: space-between;
         font-family: var(--textFont);
         font-size: var(--smallHeaderTextSize);
+        margin: 0;
         padding-inline: var(--gap);
 
         .clickHere {
             text-decoration: underline;
-
+            margin: 0;
         }
 
         .clickHere:active {
             font-weight: 600;
+        }
+
+
+        p {
+            margin: 0;
         }
     }
 
@@ -290,7 +311,7 @@ body {
         .toggle {
             display: flex;
             justify-content: center;
-            padding-top: var(--padding);
+            padding-top: var(--gap);
 
         }
 
@@ -299,7 +320,7 @@ body {
         .forskelligeTidsintervaller {
             display: flex;
             justify-content: space-between;
-            padding-top: var(--padding);
+            padding-top: var(--gap);
 
 
             .tidsinterval.gone {
@@ -342,7 +363,6 @@ body {
             .kalenderTop {
                 display: flex;
                 justify-content: space-between;
-                padding-top: var(--padding);
             }
 
             .kalenderen {
@@ -356,6 +376,8 @@ body {
                     height: 1px;
                     background-color: var(--textColor);
                     width: 100%;
+                    margin-bottom: var(--gap);
+                    margin-top: 0;
                 }
 
                 .kalenderDage {
