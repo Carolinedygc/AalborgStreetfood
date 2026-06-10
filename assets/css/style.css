@@ -207,7 +207,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: var(--gap) var(--smallGap) var(--smallGap) var(--smallGap);
+            padding: var(--smallGap);
 
             color: var(--textColor);
             font-size: var(--middleHeaderTextSize);
@@ -218,6 +218,10 @@ body {
                 flex-direction: column;
                 align-items: center;
                 width: 70px;
+
+                p {
+                    margin: 5px;
+                }
             }
 
 
