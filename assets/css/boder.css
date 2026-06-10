@@ -18,20 +18,33 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    margin-bottom: var(--smallGap);
 
     .bodCardText {
-        padding: 10px;
         display: flex;
         flex-direction: column;
-        flex: 1;
+
+        h2 {
+            margin: 0 0 var(--smallGap) 0
+        }
+
+        /* flex: 1; */
         /* fylder al tilgængelig plads */
-        justify-content: space-between;
+        /* justify-content: space-between; */
         /* skubber button til bunden */
+    }
+
+    .cardIndhold {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 10px;
+        justify-content: space-between;
     }
 
     button {
         align-self: flex-end;
-        margin: var(--smallGap) 0;
+        /* margin: var(--smallGap) 0; */
     }
 
     img {
