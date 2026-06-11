@@ -51,3 +51,8 @@ a {
 html {
     scroll-behavior: smooth;
 }
+
+/* Gør sådan at når den ruller ned, så gemmer den ikke toppen af beskrivelse under headeren */
+#beskrivelse {
+    scroll-margin-top: 120px;
+}

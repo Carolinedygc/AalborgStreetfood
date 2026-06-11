@@ -14,6 +14,10 @@
         height: 20px;
         border-radius: 100px;
     }
+
+    p {
+        margin: 5px
+    }
 }
 
 .allergen {
@@ -44,9 +48,6 @@
     align-items: center;
     cursor: pointer;
 
-    h2 {
-        font-size: 1.3rem;
-    }
 }
 
 .menuItems {
@@ -72,6 +73,10 @@
     align-items: center;
     flex-direction: row;
     gap: var(--gap);
+
+    h3 {
+        margin: 0;
+    }
 }
 
 /* Roterer pil når menuen er åben */
