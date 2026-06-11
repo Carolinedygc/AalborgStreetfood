@@ -52,7 +52,7 @@ function renderBod(post) {
 
     // viser hero billede med alt tekst
     const heroBillede = document.querySelector(".heroBillede");
-    heroBillede.innerHTML = `<img src="${post.acf.herocard_billede.sizes["medium_large"]}" alt="Billede af mad fra ${post.acf.titel}">`;
+    heroBillede.innerHTML = `<img src="${post.acf.herocard_billede.sizes["medium_large"]}" alt="Billede af mad fra ${post.acf.titel}" fetchpriority="high">`;
 
 
     // Find alle samlinger dynamisk (menu_samling_1, menu_samling_2 osv.)

@@ -41,7 +41,7 @@ function renderAktivitet(post) {
 
     // viser hero billede med alt tekst - bruger medium_large størrelse
     const heroBillede = document.querySelector(".heroBillede");
-    heroBillede.innerHTML = `<img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_event}">`;
+    heroBillede.innerHTML = `<img src="${post.acf.hero_billede.sizes["medium_large"]}" alt="Billede af ${post.acf.overskrift_event}" fetchpriority="high">`;
 
 
     // laver pakker HTML - vises kun hvis pakken har en overskrift

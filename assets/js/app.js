@@ -192,8 +192,8 @@ function renderOpeningHours() {
     `;
 
 
-    // Fanger alle elementer med klassen "openingHours", "fullOpeninghours" og "fullOpeningHoursFood"
-    const clickHere = document.querySelector('.openingHours'); // åbningstider bjælke der åbner/lukker
+    // Fanger alle elementer med klassen "whenClosed", "fullOpeninghours" og "fullOpeningHoursFood"
+    const clickHere = document.querySelector('.whenClosed'); // åbningstider bjælke der åbner/lukker
     const fullOpeningHours = document.querySelector('.fullOpeninghours'); // streetfood-kalender
     const fullOpeningHoursFood = document.querySelector('.fullOpeninghoursFood'); // madboder-kalender
 
