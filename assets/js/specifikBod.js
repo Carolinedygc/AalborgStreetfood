@@ -47,7 +47,7 @@ function renderBod(post) {
         "Indeholder laktose": "./assets/img/Laktose.svg",
         "Indeholder gluten": "./assets/img/Gluten.svg",
         "Indeholder nødder": "./assets/img/Noedder.svg",
-        "Indeholder skalddyr": "./assets/img/Skalddyr.svg"
+        "Indeholder skaldyr": "./assets/img/Skaldyr.svg"
     };
 
     // viser hero billede med alt tekst
@@ -82,12 +82,12 @@ function renderBod(post) {
             return `<div class="menuItem">
             <div class="menuItemHeader">
                 <div class="menuItemHeader">
-                    <h2>${ret.ret_overskrift}</h2>
+                    <h3>${ret.ret_overskrift}</h3>
                     <div class="allergeneIkon">
                        ${allergenerHTML}
                     </div>
                 </div>
-                <h2>${ret.ret_pris} kr</h2>
+                <h3>${ret.ret_pris}</h3>
             </div>
             <p>${ret.ret_beskrivelse}</p>
         </div>`;
@@ -136,8 +136,8 @@ function renderBod(post) {
                             <p>Indeholder nødder</p>
                         </div>
                         <div class="allergen">
-                            <img src="./assets/img/Skalddyr.svg" alt="Indeholder skalddyr ikon">
-                            <p>Indeholder skalddyr</p>
+                            <img src="./assets/img/Skaldyr.svg" alt="Indeholder skaldyr ikon">
+                            <p>Indeholder skaldyr</p>
                         </div>
                     </div>
                 </article>
